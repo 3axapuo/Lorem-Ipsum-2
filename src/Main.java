@@ -22,7 +22,7 @@ public class Main {
             System.out.println("\n☐ Введите слово для его поиска или введите `end` ");
             String inputWord = input.nextLine().trim();
             if ("end".equals(inputWord)) break; // проверка на выход
-            if (!WordsChecker.hasWord(hashMapWords, inputWord)) {
+            if (findWord.hasWord(hashMapWords, inputWord)) {
                 System.out.println("Слово '" + inputWord + "' не найдено.");
             }
         }
