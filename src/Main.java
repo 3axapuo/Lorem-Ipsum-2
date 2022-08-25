@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
     public static String sampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
