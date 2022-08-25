@@ -1,19 +1,19 @@
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-public class WordsChecker {
-    protected String sampleText;
+public class WordsChecker { //ЗАДАЧА №2, Создайте класс WordsChecker (англ. проверятель слов).
+    private final ArrayList<String> arrListWords;
 
-    public WordsChecker(String sampleText) {
-        this.sampleText = sampleText;
+    public WordsChecker(String arrListWords) {
+        //ЗАДАЧА №2, Пусть у него будет конструктор, в который передаётся текст, в котором мы будем проверять наличие слов.
+        //Вам предлагается разбить текст на слова (воспользуйтесь text.split("\\P{IsAlphabetic}+"); для этого) и
+        //положить их в коллекцию для быстрой проверки наличия в ней слов через специальный метод коллекции.
+        this.arrListWords = new ArrayList<>(Arrays.asList(arrListWords.split("\\P{IsAlphabetic}+")));
     }
 
-    public static boolean hasWord(Map<String, Integer> hashMapWords, String word) { // поиск слова в мапе
-        for (Map.Entry<String, Integer> entry : hashMapWords.entrySet()) {
-            if (entry.getKey().equals(word)) {
-                System.out.println("Количество найденного '" + entry.getKey() + "' слова к тексте " + entry.getValue());
-                return true;
-            }
-        }
-        return false;
+    //ЗАДАЧА №2, Кроме конструктора у него должен быть метод hasWord,
+    // куда передаётся слово и который возвращает ответ на вопрос (boolean) о том, есть ли это слово в тексте или нет.
+    public boolean hasWord(Object inputWord) { // поиск слова
+        return arrListWords.contains(inputWord); //для быстрой проверки наличия в ней слов через специальный метод коллекции.
     }
 }
